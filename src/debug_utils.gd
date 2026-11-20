@@ -21,13 +21,13 @@ static func debug_print(txt: String) -> void:
 static func debug_println(txt: String, rich: bool = false) -> void:
 	the_logger.debug_println(txt, rich)
 
-static func get_logger(class_path: String = "scripts/Common/console_logger.gd") -> IDebugLogger:
+static func get_logger(class_path: String = "godot_common/src/console_logger.gd") -> IDebugLogger:
 	if class_path in loggers.keys():
 		return loggers[class_path]
 	loggers[class_path] = load(class_path).new() as DebugUtils.IDebugLogger
 	return loggers[class_path]
 
-static func init_the_logger(class_path: String = "scripts/Common/console_logger.gd") -> void:
+static func init_the_logger(class_path: String = "godot_common/src/console_logger.gd") -> void:
 	the_logger = load(class_path).new() as DebugUtils.IDebugLogger
 
 static func noop() -> void:
