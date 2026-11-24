@@ -30,5 +30,6 @@ static func get_logger(class_path: String = "godot_common/src/console_logger.gd"
 static func init_the_logger(class_path: String = "godot_common/src/console_logger.gd") -> void:
 	the_logger = load(class_path).new() as DebugUtils.IDebugLogger
 
+#
 static func noop() -> void:
 	pass
